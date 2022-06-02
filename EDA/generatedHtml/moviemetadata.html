@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moviemetadata</title>
+    <style>
+        table {
+            width: 750px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+        
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 18px;
+        }
+        
+        @media only screen and (max-width: 760px),
+        (min-device-width: 768px) and (max-device-width: 1024px) {
+            table {
+                width: 100%;
+            }
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #ccc;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+            td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-column);
+                color: #000;
+                font-weight: bold;
+            }
+        }
+        
+        h1 {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            font-family: "Raleway", sans-serif;
+            font-weight: 300;
+            font-size: 40px;
+            color: #080808;
+            -webkit-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+        }
+        
+        h1 span {
+            display: block;
+            font-size: 0.5em;
+            line-height: 1.3;
+        }
+        
+        h1 em {
+            font-style: normal;
+            font-weight: 600;
+        }
+        
+        .one h1 {
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+        }
+        
+        .one h1:before {
+            width: 28px;
+            height: 5px;
+            display: block;
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            margin-left: -14px;
+            background-color: #b80000;
+        }
+        
+        .one h1:after {
+            width: 100px;
+            height: 1px;
+            display: block;
+            content: "";
+            position: relative;
+            margin-top: 25px;
+            left: 50%;
+            margin-left: -50px;
+            background-color: #b80000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">
+        <h1>data_head</h1>
+    </div>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>color</th>
+      <th>director_name</th>
+      <th>num_critic_for_reviews</th>
+      <th>duration</th>
+      <th>director_facebook_likes</th>
+      <th>actor_3_facebook_likes</th>
+      <th>actor_2_name</th>
+      <th>actor_1_facebook_likes</th>
+      <th>gross</th>
+      <th>genres</th>
+      <th>actor_1_name</th>
+      <th>movie_title</th>
+      <th>num_voted_users</th>
+      <th>cast_total_facebook_likes</th>
+      <th>actor_3_name</th>
+      <th>facenumber_in_poster</th>
+      <th>plot_keywords</th>
+      <th>movie_imdb_link</th>
+      <th>num_user_for_reviews</th>
+      <th>language</th>
+      <th>country</th>
+      <th>content_rating</th>
+      <th>budget</th>
+      <th>title_year</th>
+      <th>actor_2_facebook_likes</th>
+      <th>imdb_score</th>
+      <th>aspect_ratio</th>
+      <th>movie_facebook_likes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Color</td>
+      <td>James Cameron</td>
+      <td>723.0</td>
+      <td>178.0</td>
+      <td>0.0</td>
+      <td>855.0</td>
+      <td>Joel David Moore</td>
+      <td>1000.0</td>
+      <td>760505847.0</td>
+      <td>Action|Adventure|Fantasy|Sci-Fi</td>
+      <td>CCH Pounder</td>
+      <td>Avatar</td>
+      <td>886204</td>
+      <td>4834</td>
+      <td>Wes Studi</td>
+      <td>0.0</td>
+      <td>avatar|future|marine|native|paraplegic</td>
+      <td>http://www.imdb.com/title/tt0499549/?ref_=fn_tt_tt_1</td>
+      <td>3054.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>PG-13</td>
+      <td>237000000.0</td>
+      <td>2009.0</td>
+      <td>936.0</td>
+      <td>7.9</td>
+      <td>1.78</td>
+      <td>33000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Color</td>
+      <td>Gore Verbinski</td>
+      <td>302.0</td>
+      <td>169.0</td>
+      <td>563.0</td>
+      <td>1000.0</td>
+      <td>Orlando Bloom</td>
+      <td>40000.0</td>
+      <td>309404152.0</td>
+      <td>Action|Adventure|Fantasy</td>
+      <td>Johnny Depp</td>
+      <td>Pirates of the Caribbean: At World's End</td>
+      <td>471220</td>
+      <td>48350</td>
+      <td>Jack Davenport</td>
+      <td>0.0</td>
+      <td>goddess|marriage ceremony|marriage proposal|pirate|singapore</td>
+      <td>http://www.imdb.com/title/tt0449088/?ref_=fn_tt_tt_1</td>
+      <td>1238.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>PG-13</td>
+      <td>300000000.0</td>
+      <td>2007.0</td>
+      <td>5000.0</td>
+      <td>7.1</td>
+      <td>2.35</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Color</td>
+      <td>Sam Mendes</td>
+      <td>602.0</td>
+      <td>148.0</td>
+      <td>0.0</td>
+      <td>161.0</td>
+      <td>Rory Kinnear</td>
+      <td>11000.0</td>
+      <td>200074175.0</td>
+      <td>Action|Adventure|Thriller</td>
+      <td>Christoph Waltz</td>
+      <td>Spectre</td>
+      <td>275868</td>
+      <td>11700</td>
+      <td>Stephanie Sigman</td>
+      <td>1.0</td>
+      <td>bomb|espionage|sequel|spy|terrorist</td>
+      <td>http://www.imdb.com/title/tt2379713/?ref_=fn_tt_tt_1</td>
+      <td>994.0</td>
+      <td>English</td>
+      <td>UK</td>
+      <td>PG-13</td>
+      <td>245000000.0</td>
+      <td>2015.0</td>
+      <td>393.0</td>
+      <td>6.8</td>
+      <td>2.35</td>
+      <td>85000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Color</td>
+      <td>Christopher Nolan</td>
+      <td>813.0</td>
+      <td>164.0</td>
+      <td>22000.0</td>
+      <td>23000.0</td>
+      <td>Christian Bale</td>
+      <td>27000.0</td>
+      <td>448130642.0</td>
+      <td>Action|Thriller</td>
+      <td>Tom Hardy</td>
+      <td>The Dark Knight Rises</td>
+      <td>1144337</td>
+      <td>106759</td>
+      <td>Joseph Gordon-Levitt</td>
+      <td>0.0</td>
+      <td>deception|imprisonment|lawlessness|police officer|terrorist plot</td>
+      <td>http://www.imdb.com/title/tt1345836/?ref_=fn_tt_tt_1</td>
+      <td>2701.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>PG-13</td>
+      <td>250000000.0</td>
+      <td>2012.0</td>
+      <td>23000.0</td>
+      <td>8.5</td>
+      <td>2.35</td>
+      <td>164000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>NaN</td>
+      <td>Doug Walker</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>131.0</td>
+      <td>NaN</td>
+      <td>Rob Walker</td>
+      <td>131.0</td>
+      <td>NaN</td>
+      <td>Documentary</td>
+      <td>Doug Walker</td>
+      <td>Star Wars: Episode VII - The Force Awakens</td>
+      <td>8</td>
+      <td>143</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>http://www.imdb.com/title/tt5289954/?ref_=fn_tt_tt_1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>12.0</td>
+      <td>7.1</td>
+      <td>NaN</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+    <div class="one">
+        <h1>data_tail One</h1>
+    </div>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>color</th>
+      <th>director_name</th>
+      <th>num_critic_for_reviews</th>
+      <th>duration</th>
+      <th>director_facebook_likes</th>
+      <th>actor_3_facebook_likes</th>
+      <th>actor_2_name</th>
+      <th>actor_1_facebook_likes</th>
+      <th>gross</th>
+      <th>genres</th>
+      <th>actor_1_name</th>
+      <th>movie_title</th>
+      <th>num_voted_users</th>
+      <th>cast_total_facebook_likes</th>
+      <th>actor_3_name</th>
+      <th>facenumber_in_poster</th>
+      <th>plot_keywords</th>
+      <th>movie_imdb_link</th>
+      <th>num_user_for_reviews</th>
+      <th>language</th>
+      <th>country</th>
+      <th>content_rating</th>
+      <th>budget</th>
+      <th>title_year</th>
+      <th>actor_2_facebook_likes</th>
+      <th>imdb_score</th>
+      <th>aspect_ratio</th>
+      <th>movie_facebook_likes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>5038</th>
+      <td>Color</td>
+      <td>Scott Smith</td>
+      <td>1.0</td>
+      <td>87.0</td>
+      <td>2.0</td>
+      <td>318.0</td>
+      <td>Daphne Zuniga</td>
+      <td>637.0</td>
+      <td>NaN</td>
+      <td>Comedy|Drama</td>
+      <td>Eric Mabius</td>
+      <td>Signed Sealed Delivered</td>
+      <td>629</td>
+      <td>2283</td>
+      <td>Crystal Lowe</td>
+      <td>2.0</td>
+      <td>fraud|postal worker|prison|theft|trial</td>
+      <td>http://www.imdb.com/title/tt3000844/?ref_=fn_tt_tt_1</td>
+      <td>6.0</td>
+      <td>English</td>
+      <td>Canada</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2013.0</td>
+      <td>470.0</td>
+      <td>7.7</td>
+      <td>NaN</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>5039</th>
+      <td>Color</td>
+      <td>NaN</td>
+      <td>43.0</td>
+      <td>43.0</td>
+      <td>NaN</td>
+      <td>319.0</td>
+      <td>Valorie Curry</td>
+      <td>841.0</td>
+      <td>NaN</td>
+      <td>Crime|Drama|Mystery|Thriller</td>
+      <td>Natalie Zea</td>
+      <td>The Following</td>
+      <td>73839</td>
+      <td>1753</td>
+      <td>Sam Underwood</td>
+      <td>1.0</td>
+      <td>cult|fbi|hideout|prison escape|serial killer</td>
+      <td>http://www.imdb.com/title/tt2071645/?ref_=fn_tt_tt_1</td>
+      <td>359.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>TV-14</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>593.0</td>
+      <td>7.5</td>
+      <td>16.00</td>
+      <td>32000</td>
+    </tr>
+    <tr>
+      <th>5040</th>
+      <td>Color</td>
+      <td>Benjamin Roberds</td>
+      <td>13.0</td>
+      <td>76.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Maxwell Moody</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>Drama|Horror|Thriller</td>
+      <td>Eva Boehnke</td>
+      <td>A Plague So Pleasant</td>
+      <td>38</td>
+      <td>0</td>
+      <td>David Chandler</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>http://www.imdb.com/title/tt2107644/?ref_=fn_tt_tt_1</td>
+      <td>3.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>NaN</td>
+      <td>1400.0</td>
+      <td>2013.0</td>
+      <td>0.0</td>
+      <td>6.3</td>
+      <td>NaN</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>5041</th>
+      <td>Color</td>
+      <td>Daniel Hsia</td>
+      <td>14.0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>489.0</td>
+      <td>Daniel Henney</td>
+      <td>946.0</td>
+      <td>10443.0</td>
+      <td>Comedy|Drama|Romance</td>
+      <td>Alan Ruck</td>
+      <td>Shanghai Calling</td>
+      <td>1255</td>
+      <td>2386</td>
+      <td>Eliza Coupe</td>
+      <td>5.0</td>
+      <td>NaN</td>
+      <td>http://www.imdb.com/title/tt2070597/?ref_=fn_tt_tt_1</td>
+      <td>9.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>PG-13</td>
+      <td>NaN</td>
+      <td>2012.0</td>
+      <td>719.0</td>
+      <td>6.3</td>
+      <td>2.35</td>
+      <td>660</td>
+    </tr>
+    <tr>
+      <th>5042</th>
+      <td>Color</td>
+      <td>Jon Gunn</td>
+      <td>43.0</td>
+      <td>90.0</td>
+      <td>16.0</td>
+      <td>16.0</td>
+      <td>Brian Herzlinger</td>
+      <td>86.0</td>
+      <td>85222.0</td>
+      <td>Documentary</td>
+      <td>John August</td>
+      <td>My Date with Drew</td>
+      <td>4285</td>
+      <td>163</td>
+      <td>Jon Gunn</td>
+      <td>0.0</td>
+      <td>actress name in title|crush|date|four word title|video camera</td>
+      <td>http://www.imdb.com/title/tt0378407/?ref_=fn_tt_tt_1</td>
+      <td>84.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>PG</td>
+      <td>1100.0</td>
+      <td>2004.0</td>
+      <td>23.0</td>
+      <td>6.6</td>
+      <td>1.85</td>
+      <td>456</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+    <div class="one">
+        <h1>data_shape</h1>
+    </div>
+
+    (5043, 28)
+    <hr>
+    <div class="one">
+        <h1>data_size</h1>
+    </div>
+
+    141204
+    <hr>
+    <div class="one">
+        <h1>data_ndim</h1>
+    </div>
+
+    2
+    <hr>
+    <div class="one">
+        <h1>data_describe</h1>
+    </div>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>num_critic_for_reviews</th>
+      <th>duration</th>
+      <th>director_facebook_likes</th>
+      <th>actor_3_facebook_likes</th>
+      <th>actor_1_facebook_likes</th>
+      <th>gross</th>
+      <th>num_voted_users</th>
+      <th>cast_total_facebook_likes</th>
+      <th>facenumber_in_poster</th>
+      <th>num_user_for_reviews</th>
+      <th>budget</th>
+      <th>title_year</th>
+      <th>actor_2_facebook_likes</th>
+      <th>imdb_score</th>
+      <th>aspect_ratio</th>
+      <th>movie_facebook_likes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>4993.000000</td>
+      <td>5028.000000</td>
+      <td>4939.000000</td>
+      <td>5020.000000</td>
+      <td>5036.000000</td>
+      <td>4.159000e+03</td>
+      <td>5.043000e+03</td>
+      <td>5043.000000</td>
+      <td>5030.000000</td>
+      <td>5022.000000</td>
+      <td>4.551000e+03</td>
+      <td>4935.000000</td>
+      <td>5030.000000</td>
+      <td>5043.000000</td>
+      <td>4714.000000</td>
+      <td>5043.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>140.194272</td>
+      <td>107.201074</td>
+      <td>686.509212</td>
+      <td>645.009761</td>
+      <td>6560.047061</td>
+      <td>4.846841e+07</td>
+      <td>8.366816e+04</td>
+      <td>9699.063851</td>
+      <td>1.371173</td>
+      <td>272.770808</td>
+      <td>3.975262e+07</td>
+      <td>2002.470517</td>
+      <td>1651.754473</td>
+      <td>6.442138</td>
+      <td>2.220403</td>
+      <td>7525.964505</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>121.601675</td>
+      <td>25.197441</td>
+      <td>2813.328607</td>
+      <td>1665.041728</td>
+      <td>15020.759120</td>
+      <td>6.845299e+07</td>
+      <td>1.384853e+05</td>
+      <td>18163.799124</td>
+      <td>2.013576</td>
+      <td>377.982886</td>
+      <td>2.061149e+08</td>
+      <td>12.474599</td>
+      <td>4042.438863</td>
+      <td>1.125116</td>
+      <td>1.385113</td>
+      <td>19320.445110</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>7.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.620000e+02</td>
+      <td>5.000000e+00</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>2.180000e+02</td>
+      <td>1916.000000</td>
+      <td>0.000000</td>
+      <td>1.600000</td>
+      <td>1.180000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>50.000000</td>
+      <td>93.000000</td>
+      <td>7.000000</td>
+      <td>133.000000</td>
+      <td>614.000000</td>
+      <td>5.340988e+06</td>
+      <td>8.593500e+03</td>
+      <td>1411.000000</td>
+      <td>0.000000</td>
+      <td>65.000000</td>
+      <td>6.000000e+06</td>
+      <td>1999.000000</td>
+      <td>281.000000</td>
+      <td>5.800000</td>
+      <td>1.850000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>110.000000</td>
+      <td>103.000000</td>
+      <td>49.000000</td>
+      <td>371.500000</td>
+      <td>988.000000</td>
+      <td>2.551750e+07</td>
+      <td>3.435900e+04</td>
+      <td>3090.000000</td>
+      <td>1.000000</td>
+      <td>156.000000</td>
+      <td>2.000000e+07</td>
+      <td>2005.000000</td>
+      <td>595.000000</td>
+      <td>6.600000</td>
+      <td>2.350000</td>
+      <td>166.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>195.000000</td>
+      <td>118.000000</td>
+      <td>194.500000</td>
+      <td>636.000000</td>
+      <td>11000.000000</td>
+      <td>6.230944e+07</td>
+      <td>9.630900e+04</td>
+      <td>13756.500000</td>
+      <td>2.000000</td>
+      <td>326.000000</td>
+      <td>4.500000e+07</td>
+      <td>2011.000000</td>
+      <td>918.000000</td>
+      <td>7.200000</td>
+      <td>2.350000</td>
+      <td>3000.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>813.000000</td>
+      <td>511.000000</td>
+      <td>23000.000000</td>
+      <td>23000.000000</td>
+      <td>640000.000000</td>
+      <td>7.605058e+08</td>
+      <td>1.689764e+06</td>
+      <td>656730.000000</td>
+      <td>43.000000</td>
+      <td>5060.000000</td>
+      <td>1.221550e+10</td>
+      <td>2016.000000</td>
+      <td>137000.000000</td>
+      <td>9.500000</td>
+      <td>16.000000</td>
+      <td>349000.000000</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+    <div class="one">
+        <h1>data_sample</h1>
+    </div>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>color</th>
+      <th>director_name</th>
+      <th>num_critic_for_reviews</th>
+      <th>duration</th>
+      <th>director_facebook_likes</th>
+      <th>actor_3_facebook_likes</th>
+      <th>actor_2_name</th>
+      <th>actor_1_facebook_likes</th>
+      <th>gross</th>
+      <th>genres</th>
+      <th>actor_1_name</th>
+      <th>movie_title</th>
+      <th>num_voted_users</th>
+      <th>cast_total_facebook_likes</th>
+      <th>actor_3_name</th>
+      <th>facenumber_in_poster</th>
+      <th>plot_keywords</th>
+      <th>movie_imdb_link</th>
+      <th>num_user_for_reviews</th>
+      <th>language</th>
+      <th>country</th>
+      <th>content_rating</th>
+      <th>budget</th>
+      <th>title_year</th>
+      <th>actor_2_facebook_likes</th>
+      <th>imdb_score</th>
+      <th>aspect_ratio</th>
+      <th>movie_facebook_likes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>162</th>
+      <td>Color</td>
+      <td>Dean DeBlois</td>
+      <td>292.0</td>
+      <td>102.0</td>
+      <td>255.0</td>
+      <td>953.0</td>
+      <td>Djimon Hounsou</td>
+      <td>18000.0</td>
+      <td>176997107.0</td>
+      <td>Action|Adventure|Animation|Comedy|Family|Fantasy</td>
+      <td>Gerard Butler</td>
+      <td>How to Train Your Dragon 2</td>
+      <td>221128</td>
+      <td>23378</td>
+      <td>America Ferrera</td>
+      <td>5.0</td>
+      <td>dragon|father son relationship|husband wife relationship|mother son relationship|viking</td>
+      <td>http://www.imdb.com/title/tt1646971/?ref_=fn_tt_tt_1</td>
+      <td>343.0</td>
+      <td>English</td>
+      <td>USA</td>
+      <td>PG</td>
+      <td>145000000.0</td>
+      <td>2014.0</td>
+      <td>3000.0</td>
+      <td>7.9</td>
+      <td>2.35</td>
+      <td>46000</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+    <div class="one">
+        <h1>data_isnull_sum</h1>
+    </div>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>color</th>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>director_name</th>
+      <td>104</td>
+    </tr>
+    <tr>
+      <th>num_critic_for_reviews</th>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>duration</th>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>director_facebook_likes</th>
+      <td>104</td>
+    </tr>
+    <tr>
+      <th>actor_3_facebook_likes</th>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>actor_2_name</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>actor_1_facebook_likes</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>gross</th>
+      <td>884</td>
+    </tr>
+    <tr>
+      <th>genres</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>actor_1_name</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>movie_title</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>num_voted_users</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>cast_total_facebook_likes</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>actor_3_name</th>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>facenumber_in_poster</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>plot_keywords</th>
+      <td>153</td>
+    </tr>
+    <tr>
+      <th>movie_imdb_link</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>num_user_for_reviews</th>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>language</th>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>country</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>content_rating</th>
+      <td>303</td>
+    </tr>
+    <tr>
+      <th>budget</th>
+      <td>492</td>
+    </tr>
+    <tr>
+      <th>title_year</th>
+      <td>108</td>
+    </tr>
+    <tr>
+      <th>actor_2_facebook_likes</th>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>imdb_score</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>aspect_ratio</th>
+      <td>329</td>
+    </tr>
+    <tr>
+      <th>movie_facebook_likes</th>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+    <div class="one">
+        <h1>data_nunique</h1>
+    </div>
+
+    color                           2
+director_name                2398
+num_critic_for_reviews        528
+duration                      191
+director_facebook_likes       435
+actor_3_facebook_likes        906
+actor_2_name                 3032
+actor_1_facebook_likes        878
+gross                        4035
+genres                        914
+actor_1_name                 2097
+movie_title                  4917
+num_voted_users              4826
+cast_total_facebook_likes    3978
+actor_3_name                 3521
+facenumber_in_poster           19
+plot_keywords                4760
+movie_imdb_link              4919
+num_user_for_reviews          954
+language                       47
+country                        65
+content_rating                 18
+budget                        439
+title_year                     91
+actor_2_facebook_likes        917
+imdb_score                     78
+aspect_ratio                   22
+movie_facebook_likes          876
+dtype: int64
+    <hr>
+    <div class="one">
+        <h1>data_columns</h1>
+    </div>
+
+    Index(['color', 'director_name', 'num_critic_for_reviews', 'duration',
+       'director_facebook_likes', 'actor_3_facebook_likes', 'actor_2_name',
+       'actor_1_facebook_likes', 'gross', 'genres', 'actor_1_name',
+       'movie_title', 'num_voted_users', 'cast_total_facebook_likes',
+       'actor_3_name', 'facenumber_in_poster', 'plot_keywords',
+       'movie_imdb_link', 'num_user_for_reviews', 'language', 'country',
+       'content_rating', 'budget', 'title_year', 'actor_2_facebook_likes',
+       'imdb_score', 'aspect_ratio', 'movie_facebook_likes'],
+      dtype='object')
+    <hr>
+    <div class="one">
+        <h1>data_memory_usage</h1>
+    </div>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Index</th>
+      <td>128</td>
+    </tr>
+    <tr>
+      <th>color</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>director_name</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>num_critic_for_reviews</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>duration</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>director_facebook_likes</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>actor_3_facebook_likes</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>actor_2_name</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>actor_1_facebook_likes</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>gross</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>genres</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>actor_1_name</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>movie_title</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>num_voted_users</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>cast_total_facebook_likes</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>actor_3_name</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>facenumber_in_poster</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>plot_keywords</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>movie_imdb_link</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>num_user_for_reviews</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>language</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>country</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>content_rating</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>budget</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>title_year</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>actor_2_facebook_likes</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>imdb_score</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>aspect_ratio</th>
+      <td>40344</td>
+    </tr>
+    <tr>
+      <th>movie_facebook_likes</th>
+      <td>40344</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+    <div class="one">
+        <h1>data_duplicated</h1>
+    </div>
+
+    45
+    <hr>
+    <div class="one">
+        <h1>data_value_counts</h1>
+    </div>
+
+    
+    <hr>
+    <div class="one">
+        <h1>data_corr</h1>
+    </div>
+
+    
+    <hr>
+    <div class="one">
+        <h1>data_dtypes</h1>
+    </div>
+
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>color</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>director_name</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>num_critic_for_reviews</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>duration</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>director_facebook_likes</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>actor_3_facebook_likes</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>actor_2_name</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>actor_1_facebook_likes</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>gross</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>genres</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>actor_1_name</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>movie_title</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>num_voted_users</th>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <th>cast_total_facebook_likes</th>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <th>actor_3_name</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>facenumber_in_poster</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>plot_keywords</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>movie_imdb_link</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>num_user_for_reviews</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>language</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>country</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>content_rating</th>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>budget</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>title_year</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>actor_2_facebook_likes</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>imdb_score</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>aspect_ratio</th>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>movie_facebook_likes</th>
+      <td>int64</td>
+    </tr>
+  </tbody>
+</table>
+    <hr>
+
+
+</body>
+
+</html>

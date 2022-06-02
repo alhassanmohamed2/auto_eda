@@ -2,9 +2,9 @@ from jinja2 import Environment, FileSystemLoader
 import shutil
 
 
-def ge(data, filename):
-    original = './base_template.html'
-    target = f'./{filename}.html'
+def generate_html(data, filename):
+    original = './EDA/template/base_template.html'
+    target = f'./EDA/generatedHtml/{filename}.html'
 
     shutil.copyfile(original, target)
 

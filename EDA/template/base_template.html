@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{filename}}</title>
+    <style>
+        table {
+            width: 750px;
+            border-collapse: collapse;
+            margin: 50px auto;
+        }
+        
+        tr:nth-of-type(odd) {
+            background: #eee;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+            font-size: 18px;
+        }
+        
+        @media only screen and (max-width: 760px),
+        (min-device-width: 768px) and (max-device-width: 1024px) {
+            table {
+                width: 100%;
+            }
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                border: 1px solid #ccc;
+            }
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+            td:before {
+                position: absolute;
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                content: attr(data-column);
+                color: #000;
+                font-weight: bold;
+            }
+        }
+        
+        h1 {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            font-family: "Raleway", sans-serif;
+            font-weight: 300;
+            font-size: 40px;
+            color: #080808;
+            -webkit-transition: all 0.4s ease 0s;
+            -o-transition: all 0.4s ease 0s;
+            transition: all 0.4s ease 0s;
+        }
+        
+        h1 span {
+            display: block;
+            font-size: 0.5em;
+            line-height: 1.3;
+        }
+        
+        h1 em {
+            font-style: normal;
+            font-weight: 600;
+        }
+        
+        .one h1 {
+            text-align: center;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+        }
+        
+        .one h1:before {
+            width: 28px;
+            height: 5px;
+            display: block;
+            content: "";
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            margin-left: -14px;
+            background-color: #b80000;
+        }
+        
+        .one h1:after {
+            width: 100px;
+            height: 1px;
+            display: block;
+            content: "";
+            position: relative;
+            margin-top: 25px;
+            left: 50%;
+            margin-left: -50px;
+            background-color: #b80000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one">
+        <h1>data_head</h1>
+    </div>
+
+    {{data_head}}
+    <hr>
+    <div class="one">
+        <h1>data_tail One</h1>
+    </div>
+
+    {{data_tail}}
+    <hr>
+    <div class="one">
+        <h1>data_shape</h1>
+    </div>
+
+    {{data_shape}}
+    <hr>
+    <div class="one">
+        <h1>data_size</h1>
+    </div>
+
+    {{data_size}}
+    <hr>
+    <div class="one">
+        <h1>data_ndim</h1>
+    </div>
+
+    {{data_ndim}}
+    <hr>
+    <div class="one">
+        <h1>data_describe</h1>
+    </div>
+
+    {{data_describe}}
+    <hr>
+    <div class="one">
+        <h1>data_sample</h1>
+    </div>
+
+    {{data_sample}}
+    <hr>
+    <div class="one">
+        <h1>data_isnull_sum</h1>
+    </div>
+
+    {{data_isnull_sum}}
+    <hr>
+    <div class="one">
+        <h1>data_nunique</h1>
+    </div>
+
+    {{data_nunique}}
+    <hr>
+    <div class="one">
+        <h1>data_columns</h1>
+    </div>
+
+    {{data_columns}}
+    <hr>
+    <div class="one">
+        <h1>data_memory_usage</h1>
+    </div>
+
+    {{data_memory_usage}}
+    <hr>
+    <div class="one">
+        <h1>data_duplicated</h1>
+    </div>
+
+    {{data_duplicated}}
+    <hr>
+    <div class="one">
+        <h1>data_value_counts</h1>
+    </div>
+
+    {{data_value_counts}}
+    <hr>
+    <div class="one">
+        <h1>data_corr</h1>
+    </div>
+
+    {{data_corr}}
+    <hr>
+    <div class="one">
+        <h1>data_dtypes</h1>
+    </div>
+
+    {{data_dtypes}}
+    <hr>
+
+
+</body>
+
+</html>
